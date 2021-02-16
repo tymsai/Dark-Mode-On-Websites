@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>East dark mode</title>
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+        }
+        main{
+          margin: 5vh 15%;
+        }
+        h1{
+          font-size: 40px;
+          font-weight: 400;
+          text-align: center;
+        }
+        img{
+          width:50%;
+          height:auto;
+        }
+        p{
+          text-align: justify;
+          font-size: 18px;
+        }
+        label{
+            position: absolute;
+            width: 45px;
+            height: 22px;
+            right: 20px;
+            top: 20px;
+            border: 2px solid;
+            border-radius: 20px;
+        }
+        label:before{
+            position: absolute;
+            content: '';
+            width:20px;
+            height: 20px;
+            left: 1px;
+            top: 1px;
+            border-radius: 50%;
+            background: #000;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        label.active:before{
+            left: 24px;
+            background: #fff;
+        }
+        body.night{
+            background: #000;
+            color: #fff;
+        }
+        @media screen and (min-width:100px) {
+          .respon{
+            display: flex;
+          }
+          img{
+            height:50%;
+            width:auto;
+            padding-top: 3vh;
+            padding-right: 5%;
+          }
+          p{
+            max-width: 80%;
+            line-height: 30px;
+          }
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <label  id="dark-change"></label>
+  </header>
+  <main>
+      <h1>How the Dark Mode Works</h1>
+      <center>
+        <h3>Hit the toggle button up there right corner to activate dark mode</h3>
+      </center>
+      <div class="respon">
+        <img src="./logohome.png">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate saepe veniam alias possimus cumque aperiam hic, nam nobis neque, modi iste rerum dolores nostrum? Eveniet impedit temporibus, corporis architecto explicabo, repellendus similique alias dolore aperiam rem assumenda nostrum ratione quibusdam eligendi, provident qui eos veniam odit tempore delectus id non laborum molestias inventore. Dolor repudiandae quasi ratione dolore minima totam quis, incidunt qui esse, magnam delectus. Natus eligendi iusto, blanditiis a tempore reprehenderit velit quisquam quaerat numquam eveniet molestias autem adipisci tempora obcaecati possimus ipsum iste. Eaque rerum libero tempore nariatur dicta. Facilis, magnam excepturi? Sequi, minima! Cum maxime ea sunt a tempore nostrum veniam labore.</p>
+      </div>
+  </main>
+    <script>
+        var content = document.getElementsByTagName('body')[0];
+        var darkMode = document.getElementById('dark-change');
+            darkMode.addEventListener('click', function(){
+            darkMode.classList.toggle('active');
+            content.classList.toggle('night');
+        })
+    </script>
+</body>
+</html>
